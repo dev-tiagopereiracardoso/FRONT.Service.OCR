@@ -1,0 +1,30 @@
+﻿<div class="content-body">
+    <h5>POC OCR - Get text in PDF or Image (.JPG, .PNG)</h5>
+    <hr />
+    <form action="" id="upload" method="post" enctype="multipart/form-data">
+        <div>
+            <label style="font-weight: bold">Upload file</label>
+            <div class="tm-input-wrap">
+                <input type="file" id="tm-choose-file" name="file">
+                <label for="tm-choose-file"></label>
+                <span id="tm-file-name"></span>
+                <button>Browse</button>
+            </div>
+
+            <label style="font-weight: bold; margin-top: 20px">ChatGPT Question?</label>
+            <textarea id="questionChatGPT" style="width: 100%;" placeholder="Write text..."></textarea>
+            <hr />
+            <input type="submit" value="Upload">
+        </div>
+    </form>
+
+    <div class="div-result" style="display: none;">
+        <label style="font-weight: bold">Result Get Text:</label>
+        <div class="div-text"></div>
+
+
+        <label style="font-weight: bold">Result ChatGPT Text:</label>
+        <div class="div-text-final"></div>
+    </div>
+
+</div>
