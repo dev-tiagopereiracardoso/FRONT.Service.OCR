@@ -5,6 +5,45 @@
     <hr />
     <h5>POC OCR - Get text in PDF or Image (.JPG, .PNG)</h5>
     <hr />
+    <h5>Foto</h5>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-four-fifths">
+                    <video autoplay id="video" controls autoplay loop muted playsinline></video>
+                    <button class="button is-hidden" id="btnPlay" style="display: none;">
+                        <span class="icon is-small">
+                            <i class="fas fa-play"></i>
+                        </span>
+                    </button>
+                    <button class="button" id="btnPause" style="display: none;">
+                        <span class="icon is-small">
+                            <i class="fas fa-pause"></i>
+                        </span>
+                    </button>
+                    <button class="button is-success" id="btnScreenshot" style="width: 100%;">
+                        <span class="icon is-small">
+                            <i class="fas fa-camera"></i>
+                        </span>
+                    </button>
+                    <button class="button" id="btnChangeCamera" style="display: none; width: 100%;">
+                        <span class="icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </span>
+                        <span>Switch camera</span>
+                    </button>
+                </div>
+                <div class="column">
+                    <h2 class="title">Screenshots</h2>
+                    <div id="screenshots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <canvas class="is-hidden" id="canvas"></canvas>
+
+    <hr />
+    <h5>Upload</h5>
     <form action="" id="upload" method="post" enctype="multipart/form-data">
         <div>
             <label style="font-weight: bold">Upload file</label>

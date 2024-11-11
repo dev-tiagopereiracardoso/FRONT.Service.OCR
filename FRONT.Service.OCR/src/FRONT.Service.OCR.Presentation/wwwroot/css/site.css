@@ -8,6 +8,18 @@ html {
   }
 }
 
+@media screen and (max-width: 800px) {
+    .content-body {
+        width: 90% !important;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .content-body {
+        width: 90% !important;
+    }
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -20,8 +32,30 @@ html {
 body {
   margin-bottom: 60px;
 }
-
-.div-text{
+video{
+    width: 100%;
+}
+.button {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-width: 1px;
+    color: #363636;
+    cursor: pointer;
+    justify-content: center;
+    padding-bottom: calc(.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(.5em - 1px);
+    text-align: center;
+    white-space: nowrap;
+}
+#screenshots img {
+    height: 100px;
+}
+#canvas{
+    display: none;
+}
+.div-text {
     font-size: 12px;
     padding: 20px;
     width: 100%;
