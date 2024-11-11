@@ -35,6 +35,9 @@ body {
 video{
     width: 100%;
 }
+a{
+    cursor: pointer;
+}
 .button {
     background-color: #fff;
     border-color: #dbdbdb;
@@ -48,6 +51,19 @@ video{
     padding-top: calc(.5em - 1px);
     text-align: center;
     white-space: nowrap;
+}
+#screenshots div {
+    margin-bottom: 10px;
+}
+.red {
+    margin-left: 34px;
+    background: red;
+    color: #fff;
+    text-decoration: none;
+}
+.red:hover {
+    background: red;
+    color: #fff;
 }
 #screenshots img {
     height: 100px;

@@ -17,6 +17,26 @@ function ProcessImageSuccess(data) {
     $(".loading").hide();
 }
 
+function DeleteImage(el) {
+    $(el).parent().remove();
+}
+
+function IsMobile() {
+    if (navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)
+    ) {
+        return true;
+    }
+    else {
+        return false;
+    }
+} 
+
 (function () {
     if (
         !"mediaDevices" in navigator ||
@@ -37,18 +57,37 @@ function ProcessImageSuccess(data) {
     const devicesSelect = document.querySelector("#devicesSelect");
 
     // video constraints
-    const constraints = {
-        video: {
-            optional: [
-                { minWidth: 320 },
-                { minWidth: 640 },
-                { minWidth: 1024 },
-                { minWidth: 1280 },
-                { minWidth: 1920 },
-                { minWidth: 2560 },
-            ]
-        },
-    };
+    let constraints = null; 
+
+    if (IsMobile()) {
+        constraints = {
+            video: {
+                optional: [
+                    { minWidth: 320 },
+                    { minWidth: 640 },
+                    { minWidth: 1024 },
+                    { minWidth: 1280 },
+                    { minWidth: 1920 },
+                    { minWidth: 2560 },
+                ]
+            },
+        };
+    } else {
+        constraints = {
+            video: {
+                width: {
+                    min: 1280,
+                    ideal: 1920,
+                    max: 2560,
+                },
+                height: {
+                    min: 720,
+                    ideal: 1080,
+                    max: 1440,
+                },
+            },
+        };
+    }
 
     // use front face camera
     let useFrontCamera = false;
@@ -77,7 +116,7 @@ function ProcessImageSuccess(data) {
         canvas.height = video.videoHeight;
         canvas.getContext("2d").drawImage(video, 0, 0);
 
-        var img = $('<div><a onclick=ProcessImage("' + canvas.toDataURL("image/png") + '")><img src=' + canvas.toDataURL("image/png") +' /></a></div>'); 
+        var img = $('<div><a onclick=ProcessImage("' + canvas.toDataURL("image/png") + '")><img src=' + canvas.toDataURL("image/png") +' /></a><br><a onclick="DeleteImage(this)" class="button red">Remover</a></div>'); 
         img.attr('src', canvas.toDataURL("image/png"));
         img.appendTo('#screenshots')
     });
