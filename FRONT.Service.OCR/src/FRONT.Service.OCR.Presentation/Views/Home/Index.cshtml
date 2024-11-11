@@ -1,4 +1,8 @@
 ﻿<div class="content-body">
+    <div class="logo">
+        <img src="https://resources.isoftforge.com/imgs/logo-normal.png">
+    </div>
+    <hr />
     <h5>POC OCR - Get text in PDF or Image (.JPG, .PNG)</h5>
     <hr />
     <form action="" id="upload" method="post" enctype="multipart/form-data">
@@ -10,21 +14,18 @@
                 <span id="tm-file-name"></span>
                 <button>Browse</button>
             </div>
-
-            <label style="font-weight: bold; margin-top: 20px">ChatGPT Question?</label>
-            <textarea id="questionChatGPT" style="width: 100%;" placeholder="Write text..."></textarea>
+            <div style="display: none;">
+                <label style="font-weight: bold; margin-top: 20px">ChatGPT Question?</label>
+                <textarea id="questionChatGPT" style="width: 100%;" placeholder="Write text...">return all parameters</textarea>
+            </div>
             <hr />
-            <input type="submit" value="Upload">
+            <input class="custom-btn btn-3" type="submit" value="Upload">
         </div>
     </form>
 
     <div class="div-result" style="display: none;">
         <label style="font-weight: bold">Result Get Text:</label>
         <div class="div-text"></div>
-
-
-        <label style="font-weight: bold">Result ChatGPT Text:</label>
-        <div class="div-text-final"></div>
     </div>
 
 </div>
